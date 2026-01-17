@@ -124,7 +124,7 @@ public sealed partial class RepairableSystem : EntitySystem
             {
                 delay *= ent.Comp.SelfRepairPenalty;
             }
-            args.Handled = _toolSystem.UseTool(args.Used.Value, args.User, ent.Owner, delay, ent.Comp.QualityNeeded, new RepairFinishedEvent(), ent.Comp.FuelCost); // args.Repeat doesn't work because this current event is a wrapped event of ToolDoAfterEvent
+            args.Handled = _toolSystem.UseTool(args.Used.Value, args.User, ent.Owner, delay, ent.Comp.QualityNeeded, new RepairFinishedEvent(), ent.Comp.FuelCost, breakOnMove: ent.Comp.BreakOnMove); // args.Repeat doesn't work because this current event is a wrapped event of ToolDoAfterEvent
         }
         // Goob edit end
 
@@ -166,7 +166,7 @@ public sealed partial class RepairableSystem : EntitySystem
         }
 
         // Run the repairing doafter
-        args.Handled = _toolSystem.UseTool(args.Used, args.User, ent.Owner, delay, ent.Comp.QualityNeeded, new RepairFinishedEvent(), ent.Comp.FuelCost);
+        args.Handled = _toolSystem.UseTool(args.Used, args.User, ent.Owner, delay, ent.Comp.QualityNeeded, new RepairFinishedEvent(), ent.Comp.FuelCost, breakOnMove: ent.Comp.BreakOnMove);
     }
 }
 

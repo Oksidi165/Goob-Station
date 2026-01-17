@@ -200,7 +200,8 @@ public abstract partial class SharedToolSystem : EntitySystem
         [ForbidLiteral] IEnumerable<string> toolQualitiesNeeded,
         DoAfterEvent doAfterEv,
         float fuel = 0,
-        ToolComponent? toolComponent = null)
+        ToolComponent? toolComponent = null,
+        bool breakOnMove = true)
     {
         return UseTool(tool,
             user,
@@ -210,7 +211,8 @@ public abstract partial class SharedToolSystem : EntitySystem
             doAfterEv,
             out _,
             fuel,
-            toolComponent);
+            toolComponent,
+            breakOnMove);
     }
 
     /// <summary>
@@ -239,7 +241,8 @@ public abstract partial class SharedToolSystem : EntitySystem
         DoAfterEvent doAfterEv,
         out DoAfterId? id,
         float fuel = 0,
-        ToolComponent? toolComponent = null)
+        ToolComponent? toolComponent = null,
+        bool breakOnMove = true)
     {
         id = null;
         if (!Resolve(tool, ref toolComponent, false))
@@ -252,7 +255,7 @@ public abstract partial class SharedToolSystem : EntitySystem
         var doAfterArgs = new DoAfterArgs(EntityManager, user, delay / toolComponent.SpeedModifier, toolEvent, tool, target: target, used: tool)
         {
             BreakOnDamage = true,
-            BreakOnMove = true,
+            BreakOnMove = breakOnMove,
             BreakOnWeightlessMove = false,
             NeedHand = tool != user,
             AttemptFrequency = fuel > 0 || toolComponent.AlwaysCheckDoAfter ? AttemptFrequency.EveryTick : AttemptFrequency.Never
@@ -285,7 +288,8 @@ public abstract partial class SharedToolSystem : EntitySystem
         [ForbidLiteral] string toolQualityNeeded,
         DoAfterEvent doAfterEv,
         float fuel = 0,
-        ToolComponent? toolComponent = null)
+        ToolComponent? toolComponent = null,
+        bool breakOnMove = true)
     {
         return UseTool(tool,
             user,
@@ -295,7 +299,8 @@ public abstract partial class SharedToolSystem : EntitySystem
             doAfterEv,
             out _,
             fuel,
-            toolComponent);
+            toolComponent,
+            breakOnMove);
     }
 
     /// <summary>

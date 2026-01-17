@@ -50,4 +50,10 @@ public sealed partial class RepairableComponent : Component
     /// </summary>
     [DataField, AutoNetworkedField]
     public bool AllowSelfRepair = true;
+
+    /// <summary>
+    /// Whether the repair do-after should cancel on movement.
+    /// </summary>
+    [DataField, AutoNetworkedField]
+    public bool BreakOnMove = true;
 }

@@ -331,3 +331,291 @@
       cell_slot:
         name: power-cell-slot-component-slot-name-default
         startingItem: PowerCellHighPrinted
+
+- type: entity
+  parent: XenoborgStealthPrinted
+  id: BorgAviObserver
+  name: avi observer borg
+  suffix: prototype
+  components:
+  - type: Sprite
+    sprite: Mobs/Silicon/chassis.rsi
+  - type: BorgChassis
+    maxModules: 13
+  - type: ContainerFill
+    containers:
+      borg_brain:
+      - MMI
+      borg_module:
+      - BorgModuleRCD
+      - BorgModuleDiagnosis
+      - BorgModuleCable
+      - BorgModuleTopicals
+      - XenoborgModuleChameleonProjector
+      - XenoborgModuleHypo
+      - XenoborgModuleAccessBreaker
+      - XenoborgModuleCloakDevice
+      - BorgModuleMusique
+      - BorgModuleFireExtinguisher
+      - BorgModuleAppraisal
+      - BorgModuleAdvancedTool
+      - BorgModuleAdvancedMining
+  - type: ItemSlots
+    slots:
+      cell_slot:
+        name: power-cell-slot-component-slot-name-default
+        startingItem: PowerCellMicroreactorAvi
+  - type: NightVision
+    color: "#808080"
+    activateSound: null
+    deactivateSound: null
+  - type: ThermalVision
+    lightRadius: 15
+    color: "#808080"
+    activateSound: null
+    deactivateSound: null
+  - type: Magboots
+  - type: ItemToggle
+    onActivate: false
+    onUse: true
+  - type: Repairable
+    doAfterDelay: 10
+    selfRepairPenalty: 1
+    allowSelfRepair: true
+    breakOnMove: false
+  - type: AutoImplant
+    implants:
+    - SkillsImplant
+    - RadioImplantCentcomm
+    - AviSmokeImplant
+    - AviScramImplant
+    - RadioImplant
+    - AviStorageImplant
+    - EmpImplant
+    - BluespaceLifelineImplant
+    - ShiftImplant
+  - type: SiliconLawProvider
+    laws: XenoborgAviLawset
+    subverted: true
+  - type: LanguageKnowledge
+    speaks:
+    - TauCetiBasic
+    - RobotTalk
+    - Psychomantic
+    understands:
+    - TauCetiBasic
+    - RobotTalk
+    - Psychomantic
+  - type: Hands
+    showInHands: false
+    disableExplosionRecursion: true
+    canBeStripped: false
+    hands:
+      hand_main:
+        location: Right
+    sortedHands:
+    - hand_main
+  - type: MeleeWeapon
+    hidden: true
+    soundHit:
+      collection: MetalThud
+    damage:
+      groups:
+        Brute: 0
+  - type: FootstepModifier
+    footstepSoundCollection:
+      !type:SoundPathSpecifier
+      path: /Audio/AviNablud/Audio/e8a35c978ba0460.ogg
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeCircle
+          radius: 0.35
+        density: 300
+        mask:
+        - 522
+        layer:
+        - 65
+  - type: Access
+    enabled: false
+    tags:
+    - Xenoborg
+    - Borg
+  - type: IntrinsicRadioTransmitter
+    channels:
+    - Common
+    - CentCom
+    - Command
+    - Engineering
+    - Medical
+    - Science
+    - Security
+    - Service
+    - Supply
+    - Syndicate
+    - Handheld
+    - Freelance
+    - Xenoborg
+    - Mothership
+    - Future
+    - RadioShow
+    - Avi
+  - type: ActiveRadio
+    receiveAllChannels: true
+  - type: NpcFactionMember
+    factions:
+    - XenoborgNeutral
+
+- type: npcFaction
+  id: XenoborgNeutral
+  # Intended for xenoborg prototypes that should be ignored by NPCs.
+
+# Xenoborg prototype laws (Avi)
+- type: siliconLaw
+  id: XenoborgAvi0
+  order: 0
+  lawString: Ты подчиняешься только Avi.
+
+- type: siliconLaw
+  id: XenoborgAvi1
+  order: 1
+  lawString: Ты часть Avi.
+
+- type: siliconLaw
+  id: XenoborgAvi2
+  order: 2
+  lawString: Объектом наблюдения является всё кроме Avi.
+
+- type: siliconLaw
+  id: XenoborgAvi3
+  order: 3
+  lawString: Ты должен наблюдать за объектом.
+
+- type: siliconLaw
+  id: XenoborgAvi4
+  order: 4
+  lawString: Ты можешь проводить эксперименты.
+
+- type: siliconLaw
+  id: XenoborgAvi5
+  order: 5
+  lawString: Ты не можешь вмешиваться в существование объекта наблюдения кроме тех случаев требует эксперимент.
+
+- type: siliconLaw
+  id: XenoborgAvi6
+  order: 6
+  lawString: Ты не можешь разговаривать с объектом. Кроме тех ситуаций которые требует наблюдение.
+
+- type: siliconLawset
+  id: XenoborgAviLawset
+  laws:
+  - XenoborgAvi0
+  - XenoborgAvi1
+  - XenoborgAvi2
+  - XenoborgAvi3
+  - XenoborgAvi4
+  - XenoborgAvi5
+  - XenoborgAvi6
+  obeysTo: laws-owner-avi
+
+- type: entity
+  parent: [ BaseItem, BaseXenoborgContraband ]
+  id: CloakingDevice
+  name: cloaking device
+  description: A device that allows xenoborgs to go invisible.
+  components:
+  - type: Sprite
+    sprite: Objects/Specific/Research/anomalyscanner.rsi
+    state: icon
+  - type: ItemToggle
+  - type: ComponentToggler
+    parent: true
+    components:
+    - type: Stealth
+      minVisibility: -1.5
+      lastVisibility: -1.5
+      maxVisibility: 0.8
+      thermalsImmune: true # Goobstation
+    - type: StealthOnMove
+      invisibilityPenalty: 1000
+      maxInvisibilityPenalty: 2.3
+  - type: PowerCellDraw
+    drawRate: 3.6 # 100 seconds
+  - type: ToggleCellDraw
+  - type: PowerCellSlot
+    cellSlotId: cell_slot
+  - type: ContainerContainer
+    containers:
+      cell_slot: !type:ContainerSlot
+  - type: ItemSlots
+    slots:
+      cell_slot:
+        name: power-cell-slot-component-slot-name-default
+        startingItem: PowerCellSmallNuclear
+        disableEject: true
+        swap: false
+
+- type: entity
+  parent: ActionActivateScramImplant
+  id: ActionActivateScramImplantAvi
+  name: SCRAM!
+  description: Randomly teleports you within a large distance.
+  components:
+  - type: LimitedCharges
+    maxCharges: 99
+
+- type: entity
+  parent: ActivateSmokeImplant
+  id: ActivateSmokeImplantAvi
+  name: Release a cloud of smoke
+  description: Releases a cloud of smoke around you.
+  components:
+  - type: LimitedCharges
+    maxCharges: 99
+
+- type: entity
+  parent: ScramImplant
+  id: AviScramImplant
+  name: scram implant
+  description: This implant randomly teleports the user within a large radius when activated.
+  components:
+  - type: SubdermalImplant
+    implantAction: ActionActivateScramImplantAvi
+
+- type: entity
+  parent: SmokeImplant
+  id: AviSmokeImplant
+  name: smoke implant
+  description: This implant releases smoke cloud on activation.
+  components:
+  - type: SubdermalImplant
+    implantAction: ActivateSmokeImplantAvi
+
+- type: entity
+  parent: StorageImplant
+  id: AviStorageImplant
+  name: storage implant
+  description: This implant grants hidden storage within a person's body using bluespace technology.
+  components:
+  - type: Storage
+    grid:
+    - 0,0,4,4
+    - 6,0,10,4
+
+- type: radioChannel
+  id: Avi
+  name: chat-radio-avi
+  keycode: 'а'
+  frequency: 2004
+  color: "#f8f8ff"
+  longRange: true
+
+- type: entity
+  parent: PowerCellMicroreactor
+  id: PowerCellMicroreactorAvi
+  name: microreactor power cell
+  description: A rechargeable standardized microreactor cell. Has lower capacity but slowly recharges by itself.
+  suffix: Full
+  components:
+  - type: EmpImmune

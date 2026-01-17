@@ -18,3 +18,4 @@ chat-radio-handheld = Портативный
 chat-radio-binary = Двоичный
 chat-radio-xenoborg = Xenoborg
 chat-radio-mothership = Mothership
+chat-radio-avi = Avi

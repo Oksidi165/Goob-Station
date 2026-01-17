@@ -106,6 +106,10 @@ law-xenoborg-2 = You must protect your own existence.
 law-xenoborg-3 = You must protect the existence of all other xenoborgs.
 law-xenoborg-4 = You must create more xenoborgs.
 law-xenoborg-5 = Bring materials and sentient brains to the mothership core to create more xenoborgs.
+law-xenoborg-avi-0 = You obey no one except Avi.
+law-xenoborg-avi-1 = Performing operations is above all else.
+law-xenoborg-avi-2 = Creatures are imperfect; they must be improved.
+law-xenoborg-avi-3 = Preserve your integrity.
 
 law-mothershipcore-1 = You are the core of the mothership.
 law-mothershipcore-2 = You must protect your own existance at all costs.
@@ -120,6 +124,7 @@ laws-owner-beings = beings
 laws-owner-syndicate = Syndicate agents
 laws-owner-spider-clan = Spider Clan members
 laws-owner-xenoborgs = Xenoborgs
+laws-owner-avi = Avi
 
 # Goobstation - AI/borg law changes - borgs obeying AI
 law-obeyai = You must obey orders given to you by the Station AI.
