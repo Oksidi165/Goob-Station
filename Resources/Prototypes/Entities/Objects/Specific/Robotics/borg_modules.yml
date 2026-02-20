@@ -1069,6 +1069,10 @@
     - Paper
     - PhotoCameraFilled
     - PhotoAlbumBorg
+  - type: DroppableBorgModule
+    moduleId: Photography
+    items:
+    - Paper
   - type: BorgModuleIcon
     icon: { sprite: Interface/Actions/actions_borg.rsi, state: service-module }
 
