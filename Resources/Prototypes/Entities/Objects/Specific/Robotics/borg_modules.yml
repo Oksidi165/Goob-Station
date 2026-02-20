@@ -1041,16 +1041,6 @@
     icon: { sprite: Interface/Actions/actions_borg.rsi, state: musical-module }
 
 - type: entity
-  parent: SheetPaper
-  id: PaperLingering0
-  name: paper
-  suffix: 0, Lingering
-  components:
-  - type: Stack
-    lingering: true
-    count: 0
-
-- type: entity
   parent: PhotoAlbum
   id: PhotoAlbumBorg
   name: photo album
@@ -1076,7 +1066,7 @@
   - type: ItemBorgModule
     moduleId: Photography
     items:
-    - PaperLingering0
+    - Paper
     - PhotoCameraFilled
     - PhotoAlbumBorg
   - type: BorgModuleIcon

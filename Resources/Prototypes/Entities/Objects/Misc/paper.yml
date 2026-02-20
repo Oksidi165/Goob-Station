@@ -229,6 +229,11 @@
   id: Paper
   description: 'A piece of white paper.'
   components:
+  - type: Stack
+    stackType: Paper
+    count: 1
+    unlimited: true
+    lingering: true
   - type: Sprite
     sprite: Objects/Misc/bureaucracy.rsi
     layers:
