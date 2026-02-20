@@ -398,10 +398,13 @@
   - type: ActionGrant
     actions:
     - ActionPAIMassScanner
+    - ActionActivateAviFlashImplant
   - type: SiliconLawProvider
     laws: XenoborgAviLawset
     subverted: true
   - type: IgnoreSkills
+  - type: IntrinsicUI
+    uis: {}
   - type: UserInterface
     interfaces:
       enum.RadarConsoleUiKey.Key:
@@ -416,6 +419,10 @@
   - type: ShowHealthBars
   - type: ShowHealthIcons
   - type: ShowDiseaseIcons
+  - type: TriggerImplantAction
+  - type: FlashOnTrigger
+    range: 3
+    duration: 3
   - type: LanguageKnowledge
     speaks:
     - TauCetiBasic
