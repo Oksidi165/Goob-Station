@@ -408,8 +408,13 @@
   - type: RadarConsole
     maxRange: 256
     followEntity: true
-  - type: ShowSecurityIcons
-  - type: ShowMedicalIcons
+  - type: ShowJobIcons
+  - type: ShowMindShieldIcons
+  - type: ShowCriminalRecordIcons
+  - type: ShowContrabandDetails
+  - type: ShowHealthBars
+  - type: ShowHealthIcons
+  - type: ShowDiseaseIcons
   - type: LanguageKnowledge
     speaks:
     - TauCetiBasic
