@@ -341,7 +341,7 @@
   - type: Sprite
     sprite: Mobs/Silicon/chassis.rsi
   - type: BorgChassis
-    maxModules: 13
+    maxModules: 14
   - type: ContainerFill
     containers:
       borg_brain:
@@ -356,6 +356,7 @@
       - XenoborgModuleAccessBreaker
       - XenoborgModuleCloakDevice
       - BorgModuleMusique
+      - BorgModulePhotoReporter
       - BorgModuleFireExtinguisher
       - BorgModuleAppraisal
       - BorgModuleAdvancedTool
@@ -441,8 +442,11 @@
     hands:
       hand_main:
         location: Right
+      hand_off:
+        location: Left
     sortedHands:
     - hand_main
+    - hand_off
   - type: MeleeWeapon
     hidden: true
     soundHit:

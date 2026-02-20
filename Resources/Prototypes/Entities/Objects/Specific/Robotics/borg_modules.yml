@@ -1041,6 +1041,48 @@
     icon: { sprite: Interface/Actions/actions_borg.rsi, state: musical-module }
 
 - type: entity
+  parent: SheetPaper
+  id: SheetPaperLingering0
+  name: paper
+  suffix: 0, Lingering
+  components:
+  - type: Stack
+    lingering: true
+    count: 0
+
+- type: entity
+  parent: PhotoAlbum
+  id: PhotoAlbumBorg
+  name: photo album
+  description: A book with a bunch of memories. Put the photos in it and they will end up in the round end summary window. Use the labeler to name the photos.
+  components:
+  - type: Storage
+    grid:
+    - 0,0,7,7
+    maxItemSize: Small
+    whitelist:
+      tags:
+      - Photo
+
+- type: entity
+  id: BorgModulePhotoReporter
+  parent: [ BaseBorgModuleService, BaseProviderBorgModule ]
+  name: photo reporter cyborg module
+  components:
+  - type: Sprite
+    layers:
+    - state: service
+    - state: icon-pen
+  - type: ItemBorgModule
+    moduleId: Photography
+    items:
+    - SheetPaperLingering0
+    - PhotoCameraFilled
+    - PhotoAlbumBorg
+  - type: BorgModuleIcon
+    icon: { sprite: Interface/Actions/actions_borg.rsi, state: service-module }
+
+- type: entity
   id: BorgModuleGardening
   parent: [ BaseBorgModuleService, BaseProviderBorgModule ]
   name: gardening cyborg module
