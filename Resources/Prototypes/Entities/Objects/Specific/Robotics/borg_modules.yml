@@ -1076,7 +1076,7 @@
   - type: ItemBorgModule
     moduleId: Photography
     items:
-    - SheetPaperLingering0
+    - Paper
     - PhotoCameraFilled
     - PhotoAlbumBorg
   - type: BorgModuleIcon
