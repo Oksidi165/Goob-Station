@@ -389,6 +389,7 @@
     - RadioImplantCentcomm
     - AviSmokeImplant
     - AviScramImplant
+    - AviFlashImplant
     - RadioImplant
     - AviStorageImplant
     - EmpImplant
@@ -569,6 +570,18 @@
     maxCharges: 99
 
 - type: entity
+  parent: BaseImplantAction
+  id: ActionActivateAviFlashImplant
+  name: Flash pulse
+  description: Emits a blinding flash around you.
+  components:
+  - type: Action
+    useDelay: 30
+    icon:
+      sprite: Objects/Weapons/Melee/flash.rsi
+      state: flash
+
+- type: entity
   parent: ActivateSmokeImplant
   id: ActivateSmokeImplantAvi
   name: Release a cloud of smoke
@@ -585,6 +598,19 @@
   components:
   - type: SubdermalImplant
     implantAction: ActionActivateScramImplantAvi
+
+- type: entity
+  parent: BaseSubdermalImplant
+  id: AviFlashImplant
+  name: flash implant
+  description: This implant emits a brief blinding flash around the user.
+  components:
+  - type: SubdermalImplant
+    implantAction: ActionActivateAviFlashImplant
+  - type: TriggerImplantAction
+  - type: FlashOnTrigger
+    range: 3
+    duration: 3
 
 - type: entity
   parent: SmokeImplant
