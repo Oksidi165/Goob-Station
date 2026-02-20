@@ -442,8 +442,8 @@
       groups:
         Brute: 0
   - type: MobMover
-    stepSoundMoveDistanceWalking: 3
-    stepSoundMoveDistanceRunning: 4
+    stepSoundMoveDistanceWalking: 5
+    stepSoundMoveDistanceRunning: 7
   - type: FootstepModifier
     footstepSoundCollection:
       !type:SoundPathSpecifier
