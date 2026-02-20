@@ -422,6 +422,9 @@
     damage:
       groups:
         Brute: 0
+  - type: MobMover
+    stepSoundMoveDistanceWalking: 6
+    stepSoundMoveDistanceRunning: 8
   - type: FootstepModifier
     footstepSoundCollection:
       !type:SoundPathSpecifier
