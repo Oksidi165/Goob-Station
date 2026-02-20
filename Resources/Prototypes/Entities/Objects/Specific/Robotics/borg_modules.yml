@@ -1042,7 +1042,7 @@
 
 - type: entity
   parent: SheetPaper
-  id: SheetPaperLingering0
+  id: PaperLingering0
   name: paper
   suffix: 0, Lingering
   components:
@@ -1076,7 +1076,7 @@
   - type: ItemBorgModule
     moduleId: Photography
     items:
-    - Paper
+    - PaperLingering0
     - PhotoCameraFilled
     - PhotoAlbumBorg
   - type: BorgModuleIcon
