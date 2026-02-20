@@ -423,6 +423,8 @@
   - type: FlashOnTrigger
     range: 3
     duration: 3
+  - type: SpawnOnTrigger
+    proto: GrenadeFlashEffect
   - type: LanguageKnowledge
     speaks:
     - TauCetiBasic
