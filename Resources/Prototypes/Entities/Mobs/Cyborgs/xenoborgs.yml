@@ -395,9 +395,21 @@
     - EmpImplant
     - BluespaceLifelineImplant
     - ShiftImplant
+  - type: ActionGrant
+    actions:
+    - ActionPAIMassScanner
   - type: SiliconLawProvider
     laws: XenoborgAviLawset
     subverted: true
+  - type: UserInterface
+    interfaces:
+      enum.RadarConsoleUiKey.Key:
+        type: RadarConsoleBoundUserInterface
+  - type: RadarConsole
+    maxRange: 256
+    followEntity: true
+  - type: ShowSecurityIcons
+  - type: ShowMedicalIcons
   - type: LanguageKnowledge
     speaks:
     - TauCetiBasic
@@ -423,9 +435,6 @@
     damage:
       groups:
         Brute: 0
-  - type: MobMover
-    stepSoundMoveDistanceWalking: 6
-    stepSoundMoveDistanceRunning: 8
   - type: FootstepModifier
     footstepSoundCollection:
       !type:SoundPathSpecifier
@@ -446,6 +455,9 @@
     tags:
     - Xenoborg
     - Borg
+  - type: RandomMetadata
+    nameSegments: null
+    descriptionSegments: null
   - type: IntrinsicRadioTransmitter
     channels:
     - Common
@@ -539,7 +551,7 @@
     - type: Stealth
       minVisibility: -1.5
       lastVisibility: -1.5
-      maxVisibility: 0.8
+      maxVisibility: 0.2
       thermalsImmune: true # Goobstation
     - type: StealthOnMove
       invisibilityPenalty: 1000
