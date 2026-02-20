@@ -386,7 +386,6 @@
     breakOnMove: false
   - type: AutoImplant
     implants:
-    - SkillsImplant
     - RadioImplantCentcomm
     - AviSmokeImplant
     - AviScramImplant
@@ -402,6 +401,7 @@
   - type: SiliconLawProvider
     laws: XenoborgAviLawset
     subverted: true
+  - type: IgnoreSkills
   - type: UserInterface
     interfaces:
       enum.RadarConsoleUiKey.Key:
